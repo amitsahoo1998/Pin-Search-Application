@@ -1,6 +1,7 @@
 package com.neoapp.pinsearch.presenter.di
 
 import com.airbnb.lottie.BuildConfig
+import com.neoapp.pinsearch.data.local.PinCodeDao
 import com.neoapp.pinsearch.data.remote.PinApiService
 import com.neoapp.pinsearch.data.repository.PinRepositoryImpl
 import com.neoapp.pinsearch.domain.repository.PinRepository
@@ -49,7 +50,7 @@ class NetworkModule {
     }
 
     @Provides
-    fun providePinRepository(pinApiService: PinApiService) : PinRepository{
-        return PinRepositoryImpl(pinApiService)
+    fun providePinRepository(pinApiService: PinApiService , pinCodeDao: PinCodeDao) : PinRepository{
+        return PinRepositoryImpl(pinApiService , pinCodeDao)
     }
 }

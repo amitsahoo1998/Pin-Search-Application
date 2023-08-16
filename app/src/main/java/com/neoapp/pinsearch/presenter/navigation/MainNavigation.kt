@@ -34,7 +34,7 @@ fun MainNavigation() {
             PostOfficeSearchScreen(viewModel = hiltViewModel(),navigateToHistoryScreen = { navController.navigateToHistoryScreen() })
         }
         composable(Screen.History.route) {
-            HistoryScreen()
+            HistoryScreen(viewModel = hiltViewModel())
         }
     }
 }

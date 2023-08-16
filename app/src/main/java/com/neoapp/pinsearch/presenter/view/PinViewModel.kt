@@ -75,7 +75,7 @@ class PinViewModel @Inject constructor(
     fun setPostOffice(postOffice: String) {
         setState { state ->
             state.copy(
-                postOffice = postOffice
+                postOffice = postOffice.trim()
             )
         }
     }
